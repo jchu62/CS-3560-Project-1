@@ -8,4 +8,9 @@ public class MultipleChoiceQuestion
     private String questionDescription;
     private String[] answerDescriptions;
 
+    /* public MultipleType(int numOfAnswers, char correctAnswer, String questionDescription, String[] answerDescriptions)
+    {
+        super(numOfAnswers,correctAnswer, questionDescription, answerDescriptions);
+    } */
+
 }

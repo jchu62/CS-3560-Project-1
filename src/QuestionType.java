@@ -9,7 +9,7 @@ public abstract class QuestionType
     String questionDescription;
     String[] answerDescriptions;
 
-    public QuestionType(int numOfAnswers, char correctAnswer)
+  /*  public QuestionType(int numOfAnswers, char correctAnswer)
     {
         // error checking
         if ( numOfAnswers > 26 || numOfAnswers < 1){
@@ -44,7 +44,7 @@ public abstract class QuestionType
         this.correctAnswer[0] = correctAnswer;
         this.questionDescription = questionDescription;
     }
-
+    */
     public QuestionType(int numOfAnswers, char correctAnswer, String questionDescription, String[] answerDescriptions)
     {
         if ( numOfAnswers > 26 || numOfAnswers < 0){
@@ -59,7 +59,7 @@ public abstract class QuestionType
             }
         }
         this.correctAnswer = new char[1];
-        this.correctAnswer[1] = correctAnswer;
+        this.correctAnswer[0] = correctAnswer;
         this.questionDescription = questionDescription;
         this.answerDescriptions = answerDescriptions.clone();
     }
@@ -78,6 +78,22 @@ public abstract class QuestionType
     public void displayQuestionDescription(String description)
     {
         System.out.println(description);
+    }
+
+    public void displayAnswerDescription(String descriptions)
+    {
+        for (int i = 0; i < availableAnswers.length; i++)
+        {
+            // No catch for overflow because it will not print it out
+            if (availableAnswers.length > answerDescriptions.length || i >= answerDescriptions.length)
+            {
+                System.out.println(availableAnswers[i] + " : NULL");
+            }
+            else
+            {
+                System.out.println(availableAnswers[i] + " : " + answerDescriptions[i]);
+            }
+        }
     }
 
     public void setQuestionDescription(String description)

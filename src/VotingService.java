@@ -10,8 +10,10 @@ public class VotingService {
     };
 
     public static void main(String args[])
-    {
-        SingleChoiceQuestion test2 = new SingleChoiceQuestion(1, 'a', "lol");
+    {   String[] hi = {"j"};
+        SingleChoiceQuestion test2 = new SingleChoiceQuestion(1, 'a', "lol", hi);
         System.out.println(test2.getQuestionDescription());
+        System.out.println(test2.getAnswerDescriptions());
+        System.out.println(test2.getCorrectAnswer());
     }
 }
