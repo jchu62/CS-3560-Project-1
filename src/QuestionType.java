@@ -7,6 +7,7 @@ public abstract class QuestionType
     char[] availableAnswers;
     char[] correctAnswer;
     String questionDescription;
+    String[] answerDescription;
 
     public QuestionType(int numOfAnswers, char correctAnswer)
     {
@@ -19,8 +20,20 @@ public abstract class QuestionType
         this.correctAnswer[1] = correctAnswer;
     }
 
+    public QuestionType(int numOfAnswers, char correctAnswer, String questionDescription)
+    {
+        availableAnswers = new char[numOfAnswers];
+        for (int i = 0; i < numOfAnswers; i++)
+        {
+            availableAnswers[i] = ANSWERS[i];
+        }
+        this.correctAnswer = new char[1];
+        this.correctAnswer[1] = correctAnswer;
+        this.questionDescription = questionDescription;
+    }
 
-    boolean isTrue(char answer)
+
+    private boolean isTrue(char answer)
     {
         if (answer == this.getCorrectAnswer());
         return true;
@@ -29,5 +42,12 @@ public abstract class QuestionType
     public char getCorrectAnswer()
     {
         return this.correctAnswer[1];
+    }
+
+
+
+    public void displayQuestionDescription(String description)
+    {
+        System.out.println(description);
     }
 }
