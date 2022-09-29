@@ -5,7 +5,7 @@ public abstract class QuestionType
                       'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
                       'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     char[] availableAnswers;
-    char[] correctAnswer;
+//    char[] correctAnswer;
     String questionDescription;
     String[] answerDescriptions;
 
@@ -45,7 +45,7 @@ public abstract class QuestionType
         this.questionDescription = questionDescription;
     }
     */
-    public QuestionType(int numOfAnswers, char correctAnswer, String questionDescription, String[] answerDescriptions)
+    public QuestionType(int numOfAnswers, /*char correctAnswer,*/ String questionDescription, String[] answerDescriptions)
     {
         if ( numOfAnswers > 26 || numOfAnswers < 0){
             throw new ArrayIndexOutOfBoundsException();
@@ -58,22 +58,22 @@ public abstract class QuestionType
                 availableAnswers[i] = ANSWERS[i];
             }
         }
-        this.correctAnswer = new char[1];
-        this.correctAnswer[0] = correctAnswer;
+        /* this.correctAnswer = new char[1];
+        this.correctAnswer[0] = correctAnswer; */
         this.questionDescription = questionDescription;
         this.answerDescriptions = answerDescriptions.clone();
     }
 
-    private boolean isTrue(char answer)
-    {
-        if (answer == this.getCorrectAnswer());
-        return true;
-    };
+//    private boolean isTrue(char answer)
+//    {
+//        if (answer == this.getCorrectAnswer());
+//        return true;
+//    };
 
-    public char getCorrectAnswer()
-    {
-        return this.correctAnswer[1];
-    }
+//    public char getCorrectAnswer()
+//    {
+//        return this.correctAnswer[1];
+//    }
 
     public void displayQuestionDescription(String description)
     {
@@ -111,8 +111,13 @@ public abstract class QuestionType
         this.answerDescriptions = descriptions.clone();
     }
 
-    public String[] getAnswerDescriptions()
+    public String getAnswerDescriptions()
     {
-        return this.answerDescriptions;
+        String allAnswerDescriptions = "";
+        for (int i = 0; i < answerDescriptions.length; i++)
+        {
+            allAnswerDescriptions += answerDescriptions[i] + " ";
+        }
+        return allAnswerDescriptions;
     }
 }

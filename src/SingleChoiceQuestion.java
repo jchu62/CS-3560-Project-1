@@ -20,7 +20,8 @@ public class SingleChoiceQuestion extends QuestionType
     */
     public SingleChoiceQuestion(int numOfAnswers, char correctAnswer, String questionDescription, String[] answerDescriptions)
     {
-        super(numOfAnswers,correctAnswer, questionDescription, answerDescriptions);
+//        super(numOfAnswers,correctAnswer, questionDescription, answerDescriptions);
+        super(numOfAnswers, questionDescription, answerDescriptions);
         this.correctAnswer = correctAnswer;
     }
 
@@ -30,7 +31,6 @@ public class SingleChoiceQuestion extends QuestionType
 //        return true;
 //    };
 
-    @Override
     public char getCorrectAnswer()
     {
         return this.correctAnswer;
