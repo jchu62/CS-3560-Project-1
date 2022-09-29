@@ -6,6 +6,7 @@ public class SingleChoiceQuestion extends QuestionType
     private char[] availableAnswers;
     private char correctAnswer;
     private String questionDescription;
+    private String[] answerDescriptions;
 
     public SingleChoiceQuestion(int numOfAnswers, char correctAnswer)
     {
@@ -16,6 +17,47 @@ public class SingleChoiceQuestion extends QuestionType
     public SingleChoiceQuestion(int numOfAnswers, char correctAnswer, String questionDescription)
     {
         super(numOfAnswers, correctAnswer, questionDescription);
+    }
+
+    public SingleChoiceQuestion(int numOfAnswers, char correctAnswer, String questionDescription, String[] answerDescriptions)
+    {
+        super(numOfAnswers,correctAnswer, questionDescription, answerDescriptions);
         this.correctAnswer = correctAnswer;
+    }
+
+    private boolean isTrue(char answer)
+    {
+        if (answer == this.getCorrectAnswer());
+        return true;
+    };
+
+    public char getCorrectAnswer()
+    {
+        return this.correctAnswer;
+    }
+
+    public void displayQuestionDescription(String description)
+    {
+        System.out.println(description);
+    }
+
+    public void setQuestionDescription(String description)
+    {
+        questionDescription = description;
+    }
+
+    public String getQuestionDescription()
+    {
+        return this.questionDescription;
+    }
+
+    public void setAnswerDescriptions(String[] descriptions)
+    {
+        this.answerDescriptions = descriptions.clone();
+    }
+
+    public String[] getAnswerDescriptions()
+    {
+        return this.answerDescriptions;
     }
 }

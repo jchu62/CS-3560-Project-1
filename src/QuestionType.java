@@ -7,14 +7,21 @@ public abstract class QuestionType
     char[] availableAnswers;
     char[] correctAnswer;
     String questionDescription;
-    String[] answerDescription;
+    String[] answerDescriptions;
 
     public QuestionType(int numOfAnswers, char correctAnswer)
     {
-        availableAnswers = new char[numOfAnswers];
-        for (int i = 0; i < numOfAnswers; i++)
+        // error checking
+        if ( numOfAnswers > 26 || numOfAnswers < 1){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else
         {
-            availableAnswers[i] = ANSWERS[i];
+            availableAnswers = new char[numOfAnswers];
+            for (int i = 0; i < numOfAnswers; i++)
+            {
+                availableAnswers[i] = ANSWERS[i];
+            }
         }
         this.correctAnswer = new char[1];
         this.correctAnswer[1] = correctAnswer;
@@ -22,16 +29,40 @@ public abstract class QuestionType
 
     public QuestionType(int numOfAnswers, char correctAnswer, String questionDescription)
     {
-        availableAnswers = new char[numOfAnswers];
-        for (int i = 0; i < numOfAnswers; i++)
+        if ( numOfAnswers > 26 || numOfAnswers < 0){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else
         {
-            availableAnswers[i] = ANSWERS[i];
+            availableAnswers = new char[numOfAnswers];
+            for (int i = 0; i < numOfAnswers; i++)
+            {
+                availableAnswers[i] = ANSWERS[i];
+            }
+        }
+        this.correctAnswer = new char[1];
+        this.correctAnswer[0] = correctAnswer;
+        this.questionDescription = questionDescription;
+    }
+
+    public QuestionType(int numOfAnswers, char correctAnswer, String questionDescription, String[] answerDescriptions)
+    {
+        if ( numOfAnswers > 26 || numOfAnswers < 0){
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        else
+        {
+            availableAnswers = new char[numOfAnswers];
+            for (int i = 0; i < numOfAnswers; i++)
+            {
+                availableAnswers[i] = ANSWERS[i];
+            }
         }
         this.correctAnswer = new char[1];
         this.correctAnswer[1] = correctAnswer;
         this.questionDescription = questionDescription;
+        this.answerDescriptions = answerDescriptions.clone();
     }
-
 
     private boolean isTrue(char answer)
     {
@@ -44,10 +75,28 @@ public abstract class QuestionType
         return this.correctAnswer[1];
     }
 
-
-
     public void displayQuestionDescription(String description)
     {
         System.out.println(description);
+    }
+
+    public void setQuestionDescription(String description)
+    {
+        questionDescription = description;
+    }
+
+    public String getQuestionDescription()
+    {
+        return this.questionDescription;
+    }
+
+    public void setAnswerDescriptions(String[] descriptions)
+    {
+        this.answerDescriptions = descriptions.clone();
+    }
+
+    public String[] getAnswerDescriptions()
+    {
+        return this.answerDescriptions;
     }
 }
