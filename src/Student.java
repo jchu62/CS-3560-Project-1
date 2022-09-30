@@ -7,12 +7,12 @@ public class Student {
         this.uuid = UUID.randomUUID();
     }
 
-    private char submitAnswer(char answer)
+    public char submitAnswer(char answer)
     {
         return answer;
     }
 
-    private char[] submitAnswers(char[] answers)
+    public char[] submitAnswers(char[] answers)
     {
         return answers;
     }

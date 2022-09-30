@@ -5,7 +5,7 @@ public class SingleChoiceQuestion extends QuestionType
         super(numOfAnswers, questionDescription, answerDescriptions);
     }
 
-    private char singleChoiceAnswer(char answer)
+    public char singleChoiceAnswer(char answer)
     {
         for (int i = 0; i < availableAnswers.length; i++) {
             if (answer == availableAnswers[i])

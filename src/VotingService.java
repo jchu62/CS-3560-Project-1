@@ -19,7 +19,7 @@ public class VotingService {
 //        this.students = students;
     }
 
-    private void singleAnswerVote(Student student, char answer)
+    public void singleAnswerVote(Student student, char answer)
     {
         if(studentAnswers.containsKey(student.getUUID()))
         {
@@ -30,7 +30,7 @@ public class VotingService {
         }
     }
 
-    private void multipleAnswerVote(Student student, char[] answers)
+    public void multipleAnswerVote(Student student, char[] answers)
     {
         if(multipleStudentAnswers.containsKey(student.getUUID()))
         {
@@ -41,13 +41,15 @@ public class VotingService {
         }
     }
 
-    private void displayVotes()
+    public void displaySingleAnswerVotes()
     {
-        
+        System.out.println("The votes are " + studentAnswers.values());
+
     }
 
-    private void displayQuestion()
+    public void displayQuestion()
     {
-
+        question.displayQuestionDescription();
+        question.displayAnswerDescription();
     }
 }
