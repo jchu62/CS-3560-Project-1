@@ -47,6 +47,13 @@ public class VotingService {
 
     }
 
+    public void displayMultipleAnswerVotes()
+    {
+        // this does not work :( not sure how to fix either
+        //System.out.println("The votes are " + Arrays.toString((char[])multipleStudentAnswers.values()));
+        System.out.println("The votes are " + multipleStudentAnswers.values());
+    }
+
     public void displayQuestion()
     {
         question.displayQuestionDescription();

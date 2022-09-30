@@ -6,7 +6,7 @@ public class MultipleChoiceQuestion extends QuestionType
     }
 
     // Answer eligibility verification
-    private char[] multipleChoiceAnswers(char[] answers) {
+    public char[] multipleChoiceAnswers(char[] answers) {
         char[] validAnswers = new char[availableAnswers.length];
 
         // Preventing crash by invalid array length
@@ -36,6 +36,8 @@ public class MultipleChoiceQuestion extends QuestionType
                 if (nonRepeatedSum == 0)
                 {
                     validAnswers[0] = answers[i];
+                    nonRepeatedSum++;
+                    isNotInArray = false;
                 }
                 else
                 {
@@ -51,6 +53,7 @@ public class MultipleChoiceQuestion extends QuestionType
                 if (isNotInArray)
                 {
                     validAnswers[nonRepeatedSum] = answers[i];
+                    nonRepeatedSum++;
                 }
             }
             isNotInArray = true;
