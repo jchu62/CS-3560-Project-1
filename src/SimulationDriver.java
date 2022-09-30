@@ -19,7 +19,7 @@ public class SimulationDriver {
         char[] randomAnswers = new char[randomizer];
         for (int i = 0; i < randomAnswers.length; i++)
         {
-            int randomAnswerGenerator = (int)(Math.random()*5);
+            int randomAnswerGenerator = (int)(Math.random()*6);
             // Only time that switch statement might be good
             switch(randomAnswerGenerator)
             {
@@ -69,7 +69,7 @@ public class SimulationDriver {
             students[i] = new Student();
             for (int j = 0; j < randomizer; j++)
             {
-                int randomAnswerGenerator = (int)(Math.random()*5);
+                int randomAnswerGenerator = (int)(Math.random()*6);
                 switch(randomAnswerGenerator)
                 {
                     case 0:
