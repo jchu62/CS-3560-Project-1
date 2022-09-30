@@ -5,29 +5,10 @@ public abstract class QuestionType
                       'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
                       'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     char[] availableAnswers;
-//    char[] correctAnswer;
     String questionDescription;
     String[] answerDescriptions;
 
-  /*  public QuestionType(int numOfAnswers, char correctAnswer)
-    {
-        // error checking
-        if ( numOfAnswers > 26 || numOfAnswers < 1){
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        else
-        {
-            availableAnswers = new char[numOfAnswers];
-            for (int i = 0; i < numOfAnswers; i++)
-            {
-                availableAnswers[i] = ANSWERS[i];
-            }
-        }
-        this.correctAnswer = new char[1];
-        this.correctAnswer[1] = correctAnswer;
-    }
-
-    public QuestionType(int numOfAnswers, char correctAnswer, String questionDescription)
+    public QuestionType(int numOfAnswers, String questionDescription, String[] answerDescriptions)
     {
         if ( numOfAnswers > 26 || numOfAnswers < 0){
             throw new ArrayIndexOutOfBoundsException();
@@ -40,40 +21,9 @@ public abstract class QuestionType
                 availableAnswers[i] = ANSWERS[i];
             }
         }
-        this.correctAnswer = new char[1];
-        this.correctAnswer[0] = correctAnswer;
-        this.questionDescription = questionDescription;
-    }
-    */
-    public QuestionType(int numOfAnswers, /*char correctAnswer,*/ String questionDescription, String[] answerDescriptions)
-    {
-        if ( numOfAnswers > 26 || numOfAnswers < 0){
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        else
-        {
-            availableAnswers = new char[numOfAnswers];
-            for (int i = 0; i < numOfAnswers; i++)
-            {
-                availableAnswers[i] = ANSWERS[i];
-            }
-        }
-        /* this.correctAnswer = new char[1];
-        this.correctAnswer[0] = correctAnswer; */
         this.questionDescription = questionDescription;
         this.answerDescriptions = answerDescriptions.clone();
     }
-
-//    private boolean isTrue(char answer)
-//    {
-//        if (answer == this.getCorrectAnswer());
-//        return true;
-//    };
-
-//    public char getCorrectAnswer()
-//    {
-//        return this.correctAnswer[1];
-//    }
 
     public void displayQuestionDescription(String description)
     {

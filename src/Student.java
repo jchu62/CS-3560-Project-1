@@ -12,9 +12,14 @@ public class Student {
         return answer;
     }
 
+    private char[] submitAnswers(char[] answers)
+    {
+        return answers;
+    }
+
     // No setters because there should be no reason to change a student's ID
 
-    public UUID getUuid()
+    public UUID getUUID()
     {
         return this.uuid;
     }
