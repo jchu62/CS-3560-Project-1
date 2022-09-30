@@ -4,9 +4,12 @@ public abstract class QuestionType
     final char[] ANSWERS = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
                       'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
                       'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-    char[] availableAnswers;
-    String questionDescription;
-    String[] answerDescriptions;
+    // Unsure of how to use array length on methods outside this one, says static method error
+    // Adding availableAnswers to the other two classes would add unnecessary code to the constructors
+    // Removing availableAnswers and adding it to the other two classes would break answerDescriptions methods
+    protected char[] availableAnswers;
+    private String questionDescription;
+    private String[] answerDescriptions;
 
     public QuestionType(int numOfAnswers, String questionDescription, String[] answerDescriptions)
     {
@@ -69,5 +72,17 @@ public abstract class QuestionType
             allAnswerDescriptions += answerDescriptions[i] + " ";
         }
         return allAnswerDescriptions;
+    }
+
+    // No setter for availableAnswers because ideally they should not be set manually
+    // Unfortunately it is protected so it can be :(
+    public int getAvailableAnswerLength()
+    {
+        return availableAnswers.length;
+    }
+
+    public char[] getAvailableAnswers()
+    {
+        return availableAnswers;
     }
 }

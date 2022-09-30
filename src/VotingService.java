@@ -1,7 +1,6 @@
 import java.util.*;
 public class VotingService {
-    /* SingleChoiceQuestion test = new SingleChoiceQuestion(1, 'a'); */
-
+    private QuestionType question;
     HashMap<UUID, Character> studentAnswers = new HashMap<>();
     HashMap<UUID, Character[]> multipleStudentAnswers = new HashMap<>();
     private Student[] students;
@@ -9,13 +8,16 @@ public class VotingService {
     public VotingService(SingleChoiceQuestion question, Student[] students)
     {
         System.out.println("Single Choice Question initialized");
-    };
+        this.question = question;
+        this.students = students;
+    }
 
-//    public static void main(String args[])
-//    {   String[] hi = {"j"};
-//        SingleChoiceQuestion test2 = new SingleChoiceQuestion(1, 'a', "lol", hi);
-//        System.out.println(test2.getQuestionDescription());
-//        System.out.println(test2.getAnswerDescriptions());
-//        System.out.println(test2.getCorrectAnswer());
-//    }
+    public VotingService(MultipleChoiceQuestion question, Student[] students)
+    {
+        System.out.println("Multiple Choice Question initialized");
+        this.question = question;
+        this.students = students;
+    }
+
+    
 }
