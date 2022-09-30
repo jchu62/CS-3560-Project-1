@@ -28,12 +28,12 @@ public abstract class QuestionType
         this.answerDescriptions = answerDescriptions.clone();
     }
 
-    public void displayQuestionDescription(String description)
+    public void displayQuestionDescription()
     {
-        System.out.println(description);
+        System.out.println(questionDescription);
     }
 
-    public void displayAnswerDescription(String descriptions)
+    public void displayAnswerDescription()
     {
         for (int i = 0; i < availableAnswers.length; i++)
         {
